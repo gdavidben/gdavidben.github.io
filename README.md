@@ -1,9 +1,3 @@
----
-title: "About"
-permalink: "/about/"
-layout: page
----
-
 ## Installation
 
 Just fork this [repository](https://github.com/niklasbuschmann/contrast) and adjust the `_config.yml` to use with [Github Pages](https://pages.github.com/) and your page is done.
@@ -42,6 +36,19 @@ plugins:
 ```
 
 Note: to enable icons you also need to copy over the `_data` folder.
+
+### Local Installation
+
+#### Build
+```
+export JEKYLL_VERSION=4.2.0
+docker run --rm --volume="$PWD:/srv/jekyll" -it jekyll/jekyll:$JEKYLL_VERSION jekyll build
+```
+
+#### Running
+```
+docker run --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:$JEKYLL_VERSION jekyll serve --watch --drafts
+```
 
 ## Config
 
