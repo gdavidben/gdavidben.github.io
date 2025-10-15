@@ -29,6 +29,13 @@ gem install bundler jekyll jekyll-feed
 bundle exec jekyll serve
 ```
 
+### Local Installation
+
+```
+docker build -t jekyll .
+docker run --rm --volume="$PWD:/app" -p 4000:4000 -it jekyll /bin/bash -c "bundle install && jekyll serve --watch --force_polling --host 0.0.0.0"
+```
+
 ## Config
 
 Your `_config.yml` could for example look like this:
